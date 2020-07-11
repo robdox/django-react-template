@@ -1,4 +1,4 @@
-# Vulcan/Owner
+# Django/React template
 
 Testing
 -----
