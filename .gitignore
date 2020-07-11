@@ -1,0 +1,48 @@
+*.py[cod]
+
+*local_settings.*
+# C extensions
+*.so
+*.pyc
+/static/*
+static/*
+# Packages
+*.egg
+*.egg-info
+*.pdf
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+lib
+lib64
+*.idea/*
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.env*
+venv
+*.tfvars
+.tox/*
+nosetests.xml
+
+# Translations
+*.mo
+
+*.log
+media/.DS_Store
+*.log
+.DS_Store
+*.log
+*.db
+*.pid
+*.log
+
+*node_modules*

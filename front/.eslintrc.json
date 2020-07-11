@@ -1,0 +1,52 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "airbnb",
+    "plugin:lodash/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018
+  },
+  "plugins": [
+    "react",
+    "react-hooks",
+    "ternaries",
+    "lodash",
+    "sort-imports-es6-autofix"
+  ],
+  "rules": {
+    "consistent-return": "off",
+    "no-console": ["error", { "allow": ["warn", "error"]}],
+    "no-return-assign": [2, "except-parens"],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/forbid-prop-types": "off",
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "ternaries/no-null-ternary": 2,
+    "ternaries/no-empty-ternary": 2,
+    "lodash/import-scope": "off",
+    "lodash/prefer-noop": "off",
+    "lodash/prefer-lodash-method": "off",
+
+    "sort-imports-es6-autofix/sort-imports-es6": [2, {
+      "ignoreCase": false,
+      "ignoreMemberSort": false,
+      "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+    }]
+  }
+}

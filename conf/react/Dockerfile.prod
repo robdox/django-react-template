@@ -1,0 +1,33 @@
+FROM node:10-alpine
+MAINTAINER Robert Wells <rwells@dvele.com>
+
+WORKDIR /tmp
+COPY front/package.json /tmp/
+
+ENV NODE_ENV=production
+
+RUN npm config set unsafe-perm true
+RUN npm install yarn && \
+    yarn global add webpack@4.29.6 && \
+    yarn global add webpack-cli@3.3.2 && \
+    yarn install
+
+RUN mv /tmp/node_modules /
+ENV NODE_PATH=/node_modules
+
+WORKDIR /app
+COPY ./front /app/
+
+COPY /conf/react/nginx.conf /app/
+COPY /conf/react/webpack.prod.js /app/
+COPY /conf/react/webpack.common.js /app/
+
+RUN yarn run build:prod
+
+FROM nginx:1.17.5-alpine
+COPY --from=build /app/build /app/
+COPY --from=build /app/nginx.conf /etc/nginx/nginx.conf
+EXPOSE 80
+EXPOSE 443
+
+CMD ["nginx", "-g", "daemon off;"]
