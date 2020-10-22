@@ -28,6 +28,15 @@ Using the fantastic `eslint-prettier` plugin you can lint the code
 using `docker exec -it react npm run lint` and `docker exec -it react npm run lint-fix` to apply the
 formatting to that lint result.
 
+Windows Installation
+-----
+
+Firstly, install [`Docker for Windows`](https://docs.docker.com/docker-for-windows/install/) and follow the steps. You may need to check for updates for Windows if your installation fails. Once this installs, you want to get [`Ubuntu`](https://ubuntu.com/download/desktop). This will allow you to use `bash` commands, which I prefer over using `PowerShell`. If you use Visual Studio Code (which I recommend), you'll then want to install the [`Remote - WSL`](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) extension, allowing you to run a terminal in Ubuntu while using your VSCode editor.
+
+Make sure you check whether `Ubuntu` is set as a WSL 2 Distro by going to Docker's Settings, heading into the `Resources` tab, clicking on `WSL Integration`, and confirming that `Ubuntu`'s integration is enabled.
+
+After installing everything, you should be good to go!
+
 Build
 -----
 
