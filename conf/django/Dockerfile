@@ -1,5 +1,6 @@
 FROM python:3.8-slim
-MAINTAINER Robert Wells <rwells@dvele.com>
+LABEL Robert Wells <rwells@dvele.com>
+
 
 # Python can write to stdout / no pyc files
 ENV PYTHONUNBUFFERED 1
