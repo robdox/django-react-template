@@ -10,7 +10,7 @@ TEST_PASSWORD = {
 }
 
 TEST_USER = {
-    "email": "testuser@dvele.com",
+    "email": "testuser@user.com",
 }
 
 
@@ -18,7 +18,8 @@ TEST_USER = {
 def setup():
     # Lets set up our test user
     User.objects.create_user(
-        email=TEST_USER["email"], password=TEST_PASSWORD["password1"],
+        email=TEST_USER["email"],
+        password=TEST_PASSWORD["password1"],
     )
 
 
@@ -187,10 +188,12 @@ class AccountsTests(APITestCase):
         assert str(user) == email
 
     def test_create_user_no_password(self):
-        user = User.objects.create_user(email="nopassword@dvele.com",)
+        user = User.objects.create_user(
+            email="nopassword@user.com",
+        )
 
-        assert user.email == "nopassword@dvele.com"
-        assert str(user) == "nopassword@dvele.com"
+        assert user.email == "nopassword@user.com"
+        assert str(user) == "nopassword@user.com"
 
     def test_fail_create_user(self):
         with pytest.raises(ValueError):
@@ -206,9 +209,13 @@ class AccountsTests(APITestCase):
     def test_fail_create_superuser(self):
         with pytest.raises(ValueError):
             User.objects.create_superuser(
-                email="hi@superuser.com", password="hello", is_staff=False,
+                email="hi@superuser.com",
+                password="hello",
+                is_staff=False,
             )
         with pytest.raises(ValueError):
             User.objects.create_superuser(
-                email="hi@superuser.com", password="hello", is_superuser=False,
+                email="hi@superuser.com",
+                password="hello",
+                is_superuser=False,
             )

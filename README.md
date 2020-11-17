@@ -40,6 +40,24 @@ After installing everything, you should be good to go!
 Build
 -----
 
+##### The Environment
+
+Save this as a file called `.env` and put it in the project root next to
+`docker-compose.py`:
+
+```bash
+DB_NAME=somename
+DB_PASSWORD=somepassword
+DB_USER=someuser
+DB_HOST=postgres
+DB_PORT=5432
+
+DEBUG=1
+```
+
+This will ensure that both postgres and django are using the same credentials
+for the database.
+
 ##### First Run
 
 `mkdir -p ~/srv/docker/template-postgresql/data` to create the directory for your Postgres volume.

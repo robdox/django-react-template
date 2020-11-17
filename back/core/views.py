@@ -12,7 +12,7 @@ def hello_world(request):
     return Response({"message": "Hello, world!"})
 
 
-class HealthCheckView(View):
+class HealthCheckView(View): 
     def get(self, request, *args, **kwargs):
         with connection.cursor() as cursor:
             cursor.execute("select 1")
