@@ -17,7 +17,7 @@ services:
     container_name: django
     build:
       context: .
-      dockerfile: ./conf/django/Dockerfile.windows
+      dockerfile: ./conf/django/Dockerfile
     command: python manage.py runserver 0.0.0.0:8000
     ports:
       - "8000:8000"

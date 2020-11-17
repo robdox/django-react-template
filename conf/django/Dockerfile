@@ -1,7 +1,6 @@
 FROM python:3.8-slim
 LABEL Robert Wells <rwells@dvele.com>
 
-
 # Python can write to stdout / no pyc files
 ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
