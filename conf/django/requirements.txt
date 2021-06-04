@@ -1,4 +1,4 @@
-Django==3.1.8
+Django==3.1.9
 black==20.8b1
 dj-rest-auth==1.0.7
 django-allauth==0.42.0
